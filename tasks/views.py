@@ -1,5 +1,4 @@
 from django.shortcuts import render,redirect
-from django.http import HttpResponse
 from django.views.generic.list import ListView
 from .models import *
 from .forms import *
@@ -7,7 +6,8 @@ from .forms import *
 # Create your views here.
 # class based views
 class TaskList(ListView):
-    model = Task
+    model = Task 
+    context_object_name = 'tasks' # rename obkect_list
 
 # function based views
 '''

@@ -1,10 +1,16 @@
-from django.http.response import HttpResponse
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
+from django.views.generic.list import ListView
 from .models import *
 from .forms import *
 
 # Create your views here.
+# class based views
+class TaskList(ListView):
+    model = Task
+
+# function based views
+'''
 def index(request):
     tasks = Task.objects.all()
     form = TaskForm()
@@ -17,7 +23,7 @@ def index(request):
 
     context = {'tasks':tasks, 'form':form}
     return render(request, 'tasks/list.html', context)
-
+'''
 
 def updateTask(request, pk):
     task = Task.objects.get(id=pk)

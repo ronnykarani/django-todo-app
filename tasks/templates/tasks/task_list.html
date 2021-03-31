@@ -10,7 +10,8 @@
 <a href="{% url 'task-create' %}">Add Task</a>
 
 <form method="GET">
-    <input type ="text" name="search-area"> 
+    <input type ="text" name="search-area" 
+    value="{{ search_input }}"> 
     <input type ="submit" value="Search">
 </form>
 
@@ -22,7 +23,7 @@
     <tr>
         <td>{{task.title}}</td>
         <td>
-            <a href="{% url 'task' task.id %}">View</a>
+            <!--<a href="{% url 'task' task.id %}">View</a>-->
         </td>
         <td>
             <a href="{% url 'task-update' task.id %}">Edit</a>
